@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2017-03-21 22:35+0100\n"
+"PO-Revision-Date: 2017-07-19 20:56+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Last-Translator: \n"
 "Language: fr\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.2\n"
 
 #: ../../networking_and_traffic.rst:18
 msgid "Managing Networks and Traffic"
@@ -4737,6 +4737,20 @@ msgid ""
 "shared across all the VPNs created by the account owner. All VPN users get "
 "access to all VPNs created by the account owner."
 msgstr ""
+"Les propriétaires d'un compte CloudStack peuvent créer des réseaux virtuels "
+"privés (VPN) pour accéder à leurs machines virtuelles. Si le réseau invité est "
+"instancié depuis une offre de réseau qui propose le service d'Accès Distant VPN, "
+"le routeur virtuel (basé sur la VM Système) est utilisé pour fournir le service. "
+"CloudStack fourni un service VPN d'accès distant basé sur L2TP-over-IPsec aux "
+"réseaux virtuels invités. Chaque réseau possédant son propre routeur virtuel, "
+"les VPN ne sont pas partagés entre les réseaux. Les clients VPN natifs `Windows, "
+"Mac OS X <networking/using_remote_access.html>`_ et iOS peuvent être utilisés "
+"pour la connexion aux réseaux invités. Le propriétaire du compte peut créer et "
+"gérer les utilisateurs de son VPN. CloudStack n'utilise pas sa base de données "
+"de comptes dans ce cas mais utilise une table séparée. La base de données "
+"d'utilisateurs VPN est partagée entre tous les VPN créés par le propriétaire du "
+"compte. Tous les utilisateurs VPN ont accès à tous les VPN créés par le "
+"propriétaire du compte."
 
 #: ../../networking/remote_access_vpn.rst:37
 msgid ""
@@ -4744,6 +4758,9 @@ msgid ""
 "installed by the VPN should be only for the guest network and not for all "
 "traffic."
 msgstr ""
+"Assurez vous que tout le trafic ne passe pas par le VPN. C'est-à-dire que la "
+"route mise en place par le VPN devrait être uniquement pour le réseau invité et "
+"non pour tout le trafic."
 
 #: ../../networking/remote_access_vpn.rst:41
 msgid ""
@@ -4751,6 +4768,10 @@ msgid ""
 "a home or office to a private network in the cloud. Typically, the IP address of "
 "the connecting client is dynamic and cannot be preconfigured on the VPN server."
 msgstr ""
+"**Road Warrior / Accès Distant**. Les utilisateurs veulent pouvoir se connecter "
+"en toute sécurité depuis leur domicile ou depuis leur entreprise à un réseau "
+"privé du cloud. Typiquement, l'adresse IP du client se connectant est dynamique "
+"et ne peut pas être pré-configurée sur le serveur VPN."
 
 #: ../../networking/remote_access_vpn.rst:46
 msgid ""
@@ -4762,71 +4783,85 @@ msgid ""
 "VPNs, this is not the primary intent of this feature. For more information, see "
 "\":ref:`setting-s2s-vpn-conn`\"."
 msgstr ""
+"**Site à Site**. Dans ce scénario, deux sous-réseaux privés sont connectés via "
+"le réseau Internet public par un tunnel VPN sécurisé. Le sous-réseau de "
+"l'utilisateur du du cloud (par exemple un réseau d'entreprise) est connecté via "
+"une passerelle au réseau du cloud. L'adresse de la passerelle de l'utilisateur "
+"doit être préconfigurée sur le serveur VPN du cloud. Notez que, bien que L2TP-"
+"over-IPsec puisse être utilisé pour configurer des VPN Site-à-Site, ce n'est pas "
+"l'objectif principal de cette fonctionnalité. Pour plus d'informations, voir \":"
+"ref:`setting-s2s-vpn-conn`\"."
 
 #: ../../networking/remote_access_vpn.rst:57
 msgid "Configuring Remote Access VPN"
-msgstr ""
+msgstr "Configurer l'Accès Distant VPN"
 
 #: ../../networking/remote_access_vpn.rst:59
 msgid "To set up VPN for the cloud:"
-msgstr ""
+msgstr "Pour configurer le VPN pour le cloud :"
 
 #: ../../networking/remote_access_vpn.rst:63
 msgid "In the left navigation, click Global Settings."
-msgstr ""
+msgstr "Dans la barre de navigation à gauche, cliquer sur Paramètres globaux."
 
 #: ../../networking/remote_access_vpn.rst:65
 msgid "Set the following global configuration parameters."
-msgstr ""
+msgstr "Configurer les paramètres de configuration globaux suivants."
 
 #: ../../networking/remote_access_vpn.rst:67
 msgid ""
 "remote.access.vpn.client.ip.range - The range of IP addresses to be allocated to "
 "remote access VPN clients. The first IP in the range is used by the VPN server."
 msgstr ""
+"remote.access.vpn.client.ip.range -  L'intervalle d'adresses IP à allouer pour "
+"l'accès distant des clients VPN. La première adresse IP de l'intervalle est "
+"utilisée par le serveur VPN."
 
 #: ../../networking/remote_access_vpn.rst:71
 msgid "remote.access.vpn.psk.length - Length of the IPSec key."
-msgstr ""
+msgstr "remote.access.vpn.psk.length - La longueur de la clé IPSec."
 
 #: ../../networking/remote_access_vpn.rst:73
 msgid "remote.access.vpn.user.limit - Maximum number of VPN users per account."
 msgstr ""
+"remote.access.vpn.user.limit - Le nombre maximum d'utilisateurs VPN par compte."
 
 #: ../../networking/remote_access_vpn.rst:76
 msgid "To enable VPN for a particular network:"
-msgstr ""
+msgstr "Pour activer le VPN pour un réseau particulier :"
 
 #: ../../networking/remote_access_vpn.rst:78
 #: ../../networking/remote_access_vpn.rst:103
 msgid "Log in as a user or administrator to the CloudStack UI."
 msgstr ""
+"Se connecter en tant qu'utilisateur ou administrateur à l'interface de "
+"CloudStack."
 
 #: ../../networking/remote_access_vpn.rst:80
 #: ../../networking/remote_access_vpn.rst:105
 msgid "In the left navigation, click Network."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Réseau."
 
 #: ../../networking/remote_access_vpn.rst:82
 msgid "Click the name of the network you want to work with."
-msgstr ""
+msgstr "Cliquez sur le nom du réseau avec lequel vous souhaitez travailler."
 
 #: ../../networking/remote_access_vpn.rst:86
 msgid "Click one of the displayed IP address names."
-msgstr ""
+msgstr "Cliquer sur une des adresses IP affichées."
 
 #: ../../networking/remote_access_vpn.rst:88
 #: ../../networking/remote_access_vpn.rst:142
 msgid "Click the Enable VPN button. |vpn-icon.png|"
-msgstr ""
+msgstr "Cliquer sur le bouton Activer le VPN. |vpn-icon.png|"
 
 #: ../../networking/remote_access_vpn.rst:90
 msgid "The IPsec key is displayed in a popup window."
-msgstr ""
+msgstr "La clé IPsec est affichée dans une fenêtre popup."
 
 #: ../../networking/remote_access_vpn.rst:94
 msgid "Configuring Remote Access VPN in VPC"
-msgstr ""
+msgstr "Configurer l'Accès Distant VPN dans un VPC"
 
 #: ../../networking/remote_access_vpn.rst:96
 msgid ""
@@ -4835,10 +4870,14 @@ msgid ""
 "client can be present anywhere except inside the VPC on which the user enabled "
 "the Remote Access VPN service."
 msgstr ""
+"En autorisant l'Accès Distant VPN sur un VPC, tout client VPN présent en dehors "
+"du VPC peut accéder aux VM présentes dans le VPC en utilisant la connection "
+"distante VPN. Le client VPN peut être présent n'importe où sauf à l'intérieur du "
+"VPC sur lequel l'utilisateur à activé le service d'Accès Distant VPN."
 
 #: ../../networking/remote_access_vpn.rst:101
 msgid "To enable VPN for a VPC:"
-msgstr ""
+msgstr "Pour activer le VPN pour un VPC :"
 
 #: ../../networking/remote_access_vpn.rst:107
 #: ../../networking/site_to_site_vpn.rst:190
@@ -4876,13 +4915,13 @@ msgstr "Dans la vue de Sélection, choisissez VPC."
 #: ../../networking/virtual_private_cloud_config.rst:1290
 #: ../../networking/virtual_private_cloud_config.rst:1396
 msgid "All the VPCs that you have created for the account is listed in the page."
-msgstr ""
+msgstr "Tous les VPCs que vous avez créés pour ce compte sont listés dans la page."
 
 #: ../../networking/remote_access_vpn.rst:112
 #: ../../networking/virtual_private_cloud_config.rst:342
 #: ../../networking/virtual_private_cloud_config.rst:391
 msgid "Click the Configure button of the VPC."
-msgstr ""
+msgstr "Cliquer sur le bouton Configurer du VPC."
 
 #: ../../networking/remote_access_vpn.rst:114
 #: ../../networking/site_to_site_vpn.rst:201
@@ -4892,7 +4931,7 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1031
 #: ../../networking/virtual_private_cloud_config.rst:1299
 msgid "For each tier, the following options are displayed:"
-msgstr ""
+msgstr "Pour chaque segment, les options suivantes sont affichées :"
 
 #: ../../networking/remote_access_vpn.rst:116
 #: ../../networking/site_to_site_vpn.rst:203
@@ -4906,7 +4945,7 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1033
 #: ../../networking/virtual_private_cloud_config.rst:1301
 msgid "Internal LB"
-msgstr ""
+msgstr "Internal LB"
 
 #: ../../networking/remote_access_vpn.rst:118
 #: ../../networking/site_to_site_vpn.rst:205
@@ -4920,7 +4959,7 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1035
 #: ../../networking/virtual_private_cloud_config.rst:1303
 msgid "Public LB IP"
-msgstr ""
+msgstr "Public LB IP"
 
 #: ../../networking/remote_access_vpn.rst:122
 #: ../../networking/site_to_site_vpn.rst:209
@@ -4948,7 +4987,7 @@ msgstr "Machines Virtuelles"
 #: ../../networking/virtual_private_cloud_config.rst:1043
 #: ../../networking/virtual_private_cloud_config.rst:1311
 msgid "The following router information is displayed:"
-msgstr ""
+msgstr "Les informations de routage suivantes sont affichées :"
 
 #: ../../networking/remote_access_vpn.rst:128
 #: ../../networking/site_to_site_vpn.rst:215
@@ -4990,7 +5029,7 @@ msgstr "Adresses IP publiques"
 #: ../../networking/virtual_private_cloud_config.rst:1049
 #: ../../networking/virtual_private_cloud_config.rst:1317
 msgid "Site-to-Site VPNs"
-msgstr ""
+msgstr "VPN site à site"
 
 #: ../../networking/remote_access_vpn.rst:134
 #: ../../networking/site_to_site_vpn.rst:221
@@ -5011,7 +5050,7 @@ msgstr "Listes d'ACL réseau"
 #: ../../networking/virtual_private_cloud_config.rst:1053
 #: ../../networking/virtual_private_cloud_config.rst:1321
 msgid "In the Router node, select Public IP Addresses."
-msgstr ""
+msgstr "Sur le noeud Routeur, sélectionner les adresses IP publiques."
 
 #: ../../networking/remote_access_vpn.rst:138
 #: ../../networking/virtual_private_cloud_config.rst:828
@@ -5019,36 +5058,39 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1055
 #: ../../networking/virtual_private_cloud_config.rst:1323
 msgid "The IP Addresses page is displayed."
-msgstr ""
+msgstr "La page Adresses IP est affichée."
 
 #: ../../networking/remote_access_vpn.rst:140
 msgid "Click Source NAT IP address."
-msgstr ""
+msgstr "Cliquer sur l'adresse IP Source NAT."
 
 #: ../../networking/remote_access_vpn.rst:144
 msgid "Click OK to confirm. The IPsec key is displayed in a pop-up window."
 msgstr ""
+"Cliquer sur OK pour confirmer. La clé IPsec est affichée dans une fenêtre pop-up."
 
 #: ../../networking/remote_access_vpn.rst:146
 msgid "Now, you need to add the VPN users."
-msgstr ""
+msgstr "Vous devez maintenant ajouter les utilisateurs VPN."
 
 #: ../../networking/remote_access_vpn.rst:148
 msgid "Click the Source NAT IP."
-msgstr ""
+msgstr "Cliquer sur IP NAT Source."
 
 #: ../../networking/remote_access_vpn.rst:150
 msgid "Select the VPN tab."
-msgstr ""
+msgstr "Sélectionner l'onglet VPN."
 
 #: ../../networking/remote_access_vpn.rst:152
 msgid ""
 "Add the username and the corresponding password of the user you wanted to add."
 msgstr ""
+"Ajouter le nom d'utilisateur et le mot de passe correspondant de l'utilisateur "
+"que vous désirez ajouter."
 
 #: ../../networking/remote_access_vpn.rst:157
 msgid "Repeat the same steps to add the VPN users."
-msgstr ""
+msgstr "Répéter les mêmes étapes pour ajouter les utilisateurs VPN."
 
 #: ../../networking/site_to_site_vpn.rst:4
 msgid "Setting Up a Site-to-Site VPN Connection"
