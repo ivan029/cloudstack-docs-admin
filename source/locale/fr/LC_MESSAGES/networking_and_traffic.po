@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: Apache CloudStack Administration RTD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 13:55+0200\n"
-"PO-Revision-Date: 2017-07-19 18:30+0200\n"
+"PO-Revision-Date: 2017-07-19 20:56+0200\n"
 "Language-Team: French (http://www.transifex.com/ke4qqq/apache-cloudstack-"
 "administration-rtd/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -1411,7 +1411,7 @@ msgstr "Sélectionner l'onglet Intervalles de VLAN Dédiés."
 
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:138
 msgid "Click Dedicate VLAN Range."
-msgstr "Cliquersur Dédié un intervalle de VLAN."
+msgstr "Cliquer sur Dédié un intervalle de VLAN."
 
 #: ../../networking/public_ips_and_vlans_for_accounts.rst:140
 msgid "The Dedicate VLAN Range dialog is displayed."
@@ -2188,7 +2188,7 @@ msgstr ""
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:18
 msgid "Isolation in Advanced Zone Using Private VLAN"
-msgstr ""
+msgstr "Isolation en Zone Avancée par Private VLAN"
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:20
 msgid ""
@@ -2200,10 +2200,18 @@ msgid ""
 "applications without communication between application as well as prevent "
 "communication with other users' VMs."
 msgstr ""
+"L'isolation du trafic invité dans les réseaux partagés peut être obtenue en "
+"utilisant les Private VLANs  (PVLAN). Les PVLANs fournissent une isolation de "
+"niveau 2 entre les ports au sein du même VLAN. Dans un réseau partagé avec "
+"PVLAN, une VM utilisateur ne peut pas joindre la VM d'un autre utilisateur même "
+"si elles peuvent joindre leur serveur DHCP et la passerelle, cela permet aux "
+"utilisateurs de gérer leur trafic au sein d'un réseau et les aide à déployer "
+"plusieurs applications sans communication aussi bien entre elles qu'avec les VMs "
+"des autres utilisateurs."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:29
 msgid "Isolate VMs in a shared networks by using Private VLANs."
-msgstr ""
+msgstr "Isoler les VM dans des réseaux partagés en utilisant les Private VLANs."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:31
 msgid "Supported on KVM, XenServer, and VMware hypervisors"
@@ -2212,7 +2220,7 @@ msgstr "Supportée par les hyperviseurs KVM, XenServer et VMware."
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:33
 msgid ""
 "PVLAN-enabled shared network can be a part of multiple networks of a guest VM."
-msgstr ""
+msgstr "Un réseau partagé avec PVLAN peut être un des réseaux d'une VM invité."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:38
 msgid "About Private VLAN"
@@ -2232,6 +2240,18 @@ msgid ""
 "specific VLAN ID associated to it, which differentiates one sub-domain from "
 "another."
 msgstr ""
+"Dans un commutateur Ethernet, un VLAN est un domaine de diffusion dans lequel "
+"les hôtes peuvent établir une communication directe entre eux au niveau de la "
+"couche 2. Les VLANs privés sont conçus comme une extension du standard VLAN pour "
+"ajouter une segmentation supplémentaire au domaine de diffusion logique. Un VLAN "
+"standard est un domaine de diffusion unique, tandis qu'un VLAN privé partitionne "
+"un plus grand domaine de diffusion VLAN en sous-domaines plus petits. Un sous-"
+"domaine est représenté par une paire de VLANs : un VLAN primaire et un VLAN "
+"secondaire. Le VLAN original qui est divisé en petits groupes est appelé "
+"Primary, ce qui implique que toutes les paires de VLAN d'un VLAN privé partagent "
+"le même VLAN primaire. Tous les VLAN secondaires existent uniquement à "
+"l'intérieur du Primary. Chaque VLAN secondaire dispose d'un identifiant de VLAN "
+"spécifique qui lui est associé, ce qui différencie un sous-domaine d'un autre."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:53
 msgid ""
@@ -2241,6 +2261,12 @@ msgid ""
 "other connected host within the same private VLAN domain. Configure each host "
 "that is part of a PVLAN pair can be by using one of these three port designation:"
 msgstr ""
+"Trois types de ports existent dans un domaine de VLAN privés, qui déterminent "
+"essentiellement le comportement des hôtes participants. Chaque port aura son "
+"propre ensemble unique de règles qui réglementent la capacité d'un hôte connecté "
+"à communiquer avec un autre hôte connecté dans le même domaine VLAN privé. "
+"Configurer chaque hôte faisant partie d'une paire de PVLAN peut être effectué en "
+"utilisant l'une de ces trois types de port :"
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:60
 msgid ""
@@ -2251,6 +2277,13 @@ msgid ""
 "Routers, DHCP servers, and other trusted devices are typically attached to "
 "promiscuous ports."
 msgstr ""
+"**Promiscuous** : un port Promiscuous peut communiquer avec toutes les "
+"interfaces, incluant les ports de la communauté et les hôtes isolés qui "
+"appartiennent aux VLANs secondaires. En mode Promiscuous, les hôtes sont "
+"connectés aux ports promiscuous et sont capables de communiquer directement avec "
+"les ressources à la fois du VLAN primaire et secondaire. Les routeurs, les "
+"serveurs DHCP, et les autres périphériques de confiance sont typiquement "
+"attachés aux ports promiscuous."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:68
 msgid ""
@@ -2260,6 +2293,11 @@ msgid ""
 "device needs to have access only to a gateway router, attach it to an isolated "
 "port."
 msgstr ""
+"**VLANs isolés** : Les ports d'un VLAN isolé ne peuvent pas communiquer entre "
+"eux au niveau de la couche 2. Les hôtes connectés à des ports isolés ne peuvent "
+"seulement communiquer directement qu'avec les ressources Promiscuous. Si votre "
+"périphérique client a besoin d'avoir accès uniquement à un routeur/passerelle, "
+"connectez-le à un port isolé."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:74
 msgid ""
@@ -2271,10 +2309,18 @@ msgid ""
 "has two devices that need to be isolated from other customers' devices, but to "
 "be able to communicate among themselves, deploy them in community ports."
 msgstr ""
+"**VLAN communautaires** : Les ports au sein d'un VLAN communautaire peuvent "
+"communiquer entre eux et avec les ports promiscuous, mais ils ne peuvent pas "
+"communiquer avec les ports d'autres communautés au niveau de la couche 2. Dans "
+"un mode communautaire, la communication directe est autorisée uniquement avec "
+"les hôtes de la même communauté et ceux qui sont connectés au PVLAN primaire en "
+"mode promiscuous. Si votre client a deux périphériques qui doivent être isolés "
+"des périphériques d'autres clients, mais doivent pouvoir communiquer entre eux, "
+"déployez-les dans des ports communautaires."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:84
 msgid "For further reading:"
-msgstr ""
+msgstr "Pour plus d'informations :"
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:86
 msgid ""
@@ -2282,22 +2328,29 @@ msgid ""
 "catalyst3750/software/release/12.2_25_see/configuration/guide/swpvlan."
 "html#wp1038379>`_"
 msgstr ""
+"`Comprendre les VLANs privés <http://www.cisco.com/en/US/docs/switches/lan/"
+"catalyst3750/software/release/12.2_25_see/configuration/guide/swpvlan."
+"html#wp1038379>`_"
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:89
 msgid ""
 "`Cisco Systems' Private VLANs: Scalable Security in a Multi-Client Environment "
 "<http://tools.ietf.org/html/rfc5517>`_"
 msgstr ""
+"`Cisco Systems' Private VLANs: Scalable Security in a Multi-Client Environment "
+"<http://tools.ietf.org/html/rfc5517>`_"
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:92
 msgid ""
 "`Private VLAN (PVLAN) on vNetwork Distributed Switch - Concept Overview "
 "(1010691) <http://kb.vmware.com>`_"
 msgstr ""
+"`VLAN Privés (PVLAN) sur les vNetwork Distributed Switch - Concept Overview "
+"(1010691) <http://kb.vmware.com>`_"
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:99
 msgid "Use a PVLAN supported switch."
-msgstr ""
+msgstr "Utiliser un switch supportant les PVLAN."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:101
 msgid ""
@@ -2305,6 +2358,9 @@ msgid ""
 "products/hw/switches/ps708/products_tech_note09186a0080094830.shtml>`_ for more "
 "information."
 msgstr ""
+"Voir `La matrice de support des VLAN privés des commutateurs Catalyst <http://"
+"www.cisco.com/en/US/products/hw/switches/ps708/"
+"products_tech_note09186a0080094830.shtml>`_ pour plus d'informations."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:105
 msgid ""
@@ -2315,6 +2371,13 @@ msgid ""
 "router in PVLAN promiscuous trunk mode, which would translate an isolated VLAN "
 "to primary VLAN for the PVLAN-unaware router."
 msgstr ""
+"Tous les commutateurs de la couche 2, qui sont PVLAN-aware, sont connectés les "
+"uns aux autres, et l'un d'entre eux est connecté à un routeur. Tous les ports "
+"connectés à l'hôte seront configurés en mode trunk. Open Management VLAN, VLAN "
+"primaire (public) et ports VLAN isolés secondaires. Configurez le port du "
+"commutateur connecté au routeur dans le mode PVLAN promiscuous trunk, qui "
+"devrait traduire un VLAN isolé en VLAN primaire pour le routeur qui lui n'a pas "
+"connaissance de PVLAN."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:113
 msgid ""
@@ -2323,14 +2386,20 @@ msgid ""
 "Catalyst PVLAN support switch, connect the switch to upper switch by using "
 "cables, one each for a PVLAN pair."
 msgstr ""
+"Notez que seul le Cisco Catalyst 4500 dispose du mode de trunk promiscuous "
+"PVLAN, permettant de connecter à la fois des VLAN normaux et des PVLAN à un "
+"commutateur incompatible avec PVLAN. Pour les autres commutateurs Catalyst "
+"supportant les PVLAN, connectez le commutateur au commutateur supérieur en "
+"utilisant un câble par paire de PVLAN."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:118
 msgid "Configure private VLAN on your physical switches out-of-band."
-msgstr ""
+msgstr "Configurer les VLAN privés sur les commutateurs physiques  out-of-band."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:120
 msgid "Before you use PVLAN on XenServer and KVM, enable Open vSwitch (OVS)."
 msgstr ""
+"Avant d'utiliser les PVLAN sur XenServer et KVM, activez Open vSwitch (OVS)."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:123
 msgid ""
@@ -2338,21 +2407,26 @@ msgid ""
 "managed to simulate PVLAN on OVS for XenServer and KVM by modifying the flow "
 "table."
 msgstr ""
+"OVS sur XenServer et KVM ne supporte pas les PVLAN nativement. Par conséquent, "
+"CloudStack s'arrange pour simuler les PVLAN sur OVS pour XenServer et KVM en "
+"modifiant la table des flux."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:129
 msgid "Creating a PVLAN-Enabled Guest Network"
-msgstr ""
+msgstr "Créer un réseau invité avec PVLAN"
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:161
 msgid ""
 "**Secondary Isolated VLAN ID**: The unique ID of the Secondary Isolated VLAN."
-msgstr ""
+msgstr "**ID du VLAN secondaire isolé** : L'ID unique du VLAN secondaire isolé."
 
 #: ../../networking/isolation_in_advanced_zone_with_vlan.rst:164
 msgid ""
 "For the description on Secondary Isolated VLAN, see `About Private VLAN\" "
 "<#about-private-vlan>`_."
 msgstr ""
+"Pour la description des VLAN isolés secondaires, voir `\"A propos des VLAN privés"
+"\" <#about-private-vlan>`_."
 
 #: ../../networking/security_groups.rst:18
 msgid "Security Groups"
@@ -4692,6 +4766,20 @@ msgid ""
 "shared across all the VPNs created by the account owner. All VPN users get "
 "access to all VPNs created by the account owner."
 msgstr ""
+"Les propriétaires d'un compte CloudStack peuvent créer des réseaux virtuels "
+"privés (VPN) pour accéder à leurs machines virtuelles. Si le réseau invité est "
+"instancié depuis une offre de réseau qui propose le service d'Accès Distant VPN, "
+"le routeur virtuel (basé sur la VM Système) est utilisé pour fournir le service. "
+"CloudStack fourni un service VPN d'accès distant basé sur L2TP-over-IPsec aux "
+"réseaux virtuels invités. Chaque réseau possédant son propre routeur virtuel, "
+"les VPN ne sont pas partagés entre les réseaux. Les clients VPN natifs `Windows, "
+"Mac OS X <networking/using_remote_access.html>`_ et iOS peuvent être utilisés "
+"pour la connexion aux réseaux invités. Le propriétaire du compte peut créer et "
+"gérer les utilisateurs de son VPN. CloudStack n'utilise pas sa base de données "
+"de comptes dans ce cas mais utilise une table séparée. La base de données "
+"d'utilisateurs VPN est partagée entre tous les VPN créés par le propriétaire du "
+"compte. Tous les utilisateurs VPN ont accès à tous les VPN créés par le "
+"propriétaire du compte."
 
 #: ../../networking/remote_access_vpn.rst:37
 msgid ""
@@ -4699,6 +4787,9 @@ msgid ""
 "installed by the VPN should be only for the guest network and not for all "
 "traffic."
 msgstr ""
+"Assurez vous que tout le trafic ne passe pas par le VPN. C'est-à-dire que la "
+"route mise en place par le VPN devrait être uniquement pour le réseau invité et "
+"non pour tout le trafic."
 
 #: ../../networking/remote_access_vpn.rst:41
 msgid ""
@@ -4706,6 +4797,10 @@ msgid ""
 "a home or office to a private network in the cloud. Typically, the IP address of "
 "the connecting client is dynamic and cannot be preconfigured on the VPN server."
 msgstr ""
+"**Road Warrior / Accès Distant**. Les utilisateurs veulent pouvoir se connecter "
+"en toute sécurité depuis leur domicile ou depuis leur entreprise à un réseau "
+"privé du cloud. Typiquement, l'adresse IP du client se connectant est dynamique "
+"et ne peut pas être pré-configurée sur le serveur VPN."
 
 #: ../../networking/remote_access_vpn.rst:46
 msgid ""
@@ -4717,71 +4812,85 @@ msgid ""
 "VPNs, this is not the primary intent of this feature. For more information, see "
 "\":ref:`setting-s2s-vpn-conn`\"."
 msgstr ""
+"**Site à Site**. Dans ce scénario, deux sous-réseaux privés sont connectés via "
+"le réseau Internet public par un tunnel VPN sécurisé. Le sous-réseau de "
+"l'utilisateur du du cloud (par exemple un réseau d'entreprise) est connecté via "
+"une passerelle au réseau du cloud. L'adresse de la passerelle de l'utilisateur "
+"doit être préconfigurée sur le serveur VPN du cloud. Notez que, bien que L2TP-"
+"over-IPsec puisse être utilisé pour configurer des VPN Site-à-Site, ce n'est pas "
+"l'objectif principal de cette fonctionnalité. Pour plus d'informations, voir \":"
+"ref:`setting-s2s-vpn-conn`\"."
 
 #: ../../networking/remote_access_vpn.rst:57
 msgid "Configuring Remote Access VPN"
-msgstr ""
+msgstr "Configurer l'Accès Distant VPN"
 
 #: ../../networking/remote_access_vpn.rst:59
 msgid "To set up VPN for the cloud:"
-msgstr ""
+msgstr "Pour configurer le VPN pour le cloud :"
 
 #: ../../networking/remote_access_vpn.rst:63
 msgid "In the left navigation, click Global Settings."
-msgstr ""
+msgstr "Dans la barre de navigation à gauche, cliquer sur Paramètres globaux."
 
 #: ../../networking/remote_access_vpn.rst:65
 msgid "Set the following global configuration parameters."
-msgstr ""
+msgstr "Configurer les paramètres de configuration globaux suivants."
 
 #: ../../networking/remote_access_vpn.rst:67
 msgid ""
 "remote.access.vpn.client.ip.range - The range of IP addresses to be allocated to "
 "remote access VPN clients. The first IP in the range is used by the VPN server."
 msgstr ""
+"remote.access.vpn.client.ip.range -  L'intervalle d'adresses IP à allouer pour "
+"l'accès distant des clients VPN. La première adresse IP de l'intervalle est "
+"utilisée par le serveur VPN."
 
 #: ../../networking/remote_access_vpn.rst:71
 msgid "remote.access.vpn.psk.length - Length of the IPSec key."
-msgstr ""
+msgstr "remote.access.vpn.psk.length - La longueur de la clé IPSec."
 
 #: ../../networking/remote_access_vpn.rst:73
 msgid "remote.access.vpn.user.limit - Maximum number of VPN users per account."
 msgstr ""
+"remote.access.vpn.user.limit - Le nombre maximum d'utilisateurs VPN par compte."
 
 #: ../../networking/remote_access_vpn.rst:76
 msgid "To enable VPN for a particular network:"
-msgstr ""
+msgstr "Pour activer le VPN pour un réseau particulier :"
 
 #: ../../networking/remote_access_vpn.rst:78
 #: ../../networking/remote_access_vpn.rst:103
 msgid "Log in as a user or administrator to the CloudStack UI."
 msgstr ""
+"Se connecter en tant qu'utilisateur ou administrateur à l'interface de "
+"CloudStack."
 
 #: ../../networking/remote_access_vpn.rst:80
 #: ../../networking/remote_access_vpn.rst:105
 msgid "In the left navigation, click Network."
-msgstr ""
+msgstr "Dans la barre de navigation de gauche, cliquer sur Réseau."
 
 #: ../../networking/remote_access_vpn.rst:82
 msgid "Click the name of the network you want to work with."
-msgstr ""
+msgstr "Cliquez sur le nom du réseau avec lequel vous souhaitez travailler."
 
 #: ../../networking/remote_access_vpn.rst:86
 msgid "Click one of the displayed IP address names."
-msgstr ""
+msgstr "Cliquer sur une des adresses IP affichées."
 
 #: ../../networking/remote_access_vpn.rst:88
 #: ../../networking/remote_access_vpn.rst:142
 msgid "Click the Enable VPN button. |vpn-icon.png|"
-msgstr ""
+msgstr "Cliquer sur le bouton Activer le VPN. |vpn-icon.png|"
 
 #: ../../networking/remote_access_vpn.rst:90
 msgid "The IPsec key is displayed in a popup window."
-msgstr ""
+msgstr "La clé IPsec est affichée dans une fenêtre popup."
 
 #: ../../networking/remote_access_vpn.rst:94
 msgid "Configuring Remote Access VPN in VPC"
-msgstr ""
+msgstr "Configurer l'Accès Distant VPN dans un VPC"
 
 #: ../../networking/remote_access_vpn.rst:96
 msgid ""
@@ -4790,10 +4899,14 @@ msgid ""
 "client can be present anywhere except inside the VPC on which the user enabled "
 "the Remote Access VPN service."
 msgstr ""
+"En autorisant l'Accès Distant VPN sur un VPC, tout client VPN présent en dehors "
+"du VPC peut accéder aux VM présentes dans le VPC en utilisant la connection "
+"distante VPN. Le client VPN peut être présent n'importe où sauf à l'intérieur du "
+"VPC sur lequel l'utilisateur à activé le service d'Accès Distant VPN."
 
 #: ../../networking/remote_access_vpn.rst:101
 msgid "To enable VPN for a VPC:"
-msgstr ""
+msgstr "Pour activer le VPN pour un VPC :"
 
 #: ../../networking/remote_access_vpn.rst:107
 #: ../../networking/site_to_site_vpn.rst:190
@@ -4831,13 +4944,13 @@ msgstr "Dans la vue de Sélection, choisissez VPC."
 #: ../../networking/virtual_private_cloud_config.rst:1290
 #: ../../networking/virtual_private_cloud_config.rst:1396
 msgid "All the VPCs that you have created for the account is listed in the page."
-msgstr ""
+msgstr "Tous les VPCs que vous avez créés pour ce compte sont listés dans la page."
 
 #: ../../networking/remote_access_vpn.rst:112
 #: ../../networking/virtual_private_cloud_config.rst:342
 #: ../../networking/virtual_private_cloud_config.rst:391
 msgid "Click the Configure button of the VPC."
-msgstr ""
+msgstr "Cliquer sur le bouton Configurer du VPC."
 
 #: ../../networking/remote_access_vpn.rst:114
 #: ../../networking/site_to_site_vpn.rst:201
@@ -4847,7 +4960,7 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1031
 #: ../../networking/virtual_private_cloud_config.rst:1299
 msgid "For each tier, the following options are displayed:"
-msgstr ""
+msgstr "Pour chaque segment, les options suivantes sont affichées :"
 
 #: ../../networking/remote_access_vpn.rst:116
 #: ../../networking/site_to_site_vpn.rst:203
@@ -4861,7 +4974,7 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1033
 #: ../../networking/virtual_private_cloud_config.rst:1301
 msgid "Internal LB"
-msgstr ""
+msgstr "Internal LB"
 
 #: ../../networking/remote_access_vpn.rst:118
 #: ../../networking/site_to_site_vpn.rst:205
@@ -4875,7 +4988,7 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1035
 #: ../../networking/virtual_private_cloud_config.rst:1303
 msgid "Public LB IP"
-msgstr ""
+msgstr "Public LB IP"
 
 #: ../../networking/remote_access_vpn.rst:122
 #: ../../networking/site_to_site_vpn.rst:209
@@ -4903,7 +5016,7 @@ msgstr "Machines Virtuelles"
 #: ../../networking/virtual_private_cloud_config.rst:1043
 #: ../../networking/virtual_private_cloud_config.rst:1311
 msgid "The following router information is displayed:"
-msgstr ""
+msgstr "Les informations de routage suivantes sont affichées :"
 
 #: ../../networking/remote_access_vpn.rst:128
 #: ../../networking/site_to_site_vpn.rst:215
@@ -4945,7 +5058,7 @@ msgstr "Adresses IP publiques"
 #: ../../networking/virtual_private_cloud_config.rst:1049
 #: ../../networking/virtual_private_cloud_config.rst:1317
 msgid "Site-to-Site VPNs"
-msgstr ""
+msgstr "VPN site à site"
 
 #: ../../networking/remote_access_vpn.rst:134
 #: ../../networking/site_to_site_vpn.rst:221
@@ -4966,7 +5079,7 @@ msgstr "Listes d'ACL réseau"
 #: ../../networking/virtual_private_cloud_config.rst:1053
 #: ../../networking/virtual_private_cloud_config.rst:1321
 msgid "In the Router node, select Public IP Addresses."
-msgstr ""
+msgstr "Sur le noeud Routeur, sélectionner les adresses IP publiques."
 
 #: ../../networking/remote_access_vpn.rst:138
 #: ../../networking/virtual_private_cloud_config.rst:828
@@ -4974,36 +5087,39 @@ msgstr ""
 #: ../../networking/virtual_private_cloud_config.rst:1055
 #: ../../networking/virtual_private_cloud_config.rst:1323
 msgid "The IP Addresses page is displayed."
-msgstr ""
+msgstr "La page Adresses IP est affichée."
 
 #: ../../networking/remote_access_vpn.rst:140
 msgid "Click Source NAT IP address."
-msgstr ""
+msgstr "Cliquer sur l'adresse IP Source NAT."
 
 #: ../../networking/remote_access_vpn.rst:144
 msgid "Click OK to confirm. The IPsec key is displayed in a pop-up window."
 msgstr ""
+"Cliquer sur OK pour confirmer. La clé IPsec est affichée dans une fenêtre pop-up."
 
 #: ../../networking/remote_access_vpn.rst:146
 msgid "Now, you need to add the VPN users."
-msgstr ""
+msgstr "Vous devez maintenant ajouter les utilisateurs VPN."
 
 #: ../../networking/remote_access_vpn.rst:148
 msgid "Click the Source NAT IP."
-msgstr ""
+msgstr "Cliquer sur IP NAT Source."
 
 #: ../../networking/remote_access_vpn.rst:150
 msgid "Select the VPN tab."
-msgstr ""
+msgstr "Sélectionner l'onglet VPN."
 
 #: ../../networking/remote_access_vpn.rst:152
 msgid ""
 "Add the username and the corresponding password of the user you wanted to add."
 msgstr ""
+"Ajouter le nom d'utilisateur et le mot de passe correspondant de l'utilisateur "
+"que vous désirez ajouter."
 
 #: ../../networking/remote_access_vpn.rst:157
 msgid "Repeat the same steps to add the VPN users."
-msgstr ""
+msgstr "Répéter les mêmes étapes pour ajouter les utilisateurs VPN."
 
 #: ../../networking/site_to_site_vpn.rst:4
 msgid "Setting Up a Site-to-Site VPN Connection"
